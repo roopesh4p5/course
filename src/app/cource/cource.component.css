@@ -1,0 +1,51 @@
+.hero{
+  display: flex;  
+  width: 100%;
+  justify-content: center;
+  background-color: rgb(29, 29, 29);
+}
+h1{
+    /* border: 2px solid blue; */
+    width: auto;
+    font-size: 34px;
+    color: aliceblue;
+    text-transform: capitalize;
+    background-color: rgba(49, 49, 49, 0);
+    padding: 10px 0px;
+}
+.cont  {
+    width: 90vw;
+    display: flex;
+    justify-content: center;
+
+    flex-direction: column;
+    text-align: center;
+    /* border: 3px solid red; */
+}
+
+.card{
+background-color: rgb(218, 218, 218);
+border: 2px solid black;
+border-radius: 10px;
+width: 15vw;
+height: 35vh;
+margin: 5px;
+
+}
+
+.card img{
+    object-fit: contain;
+    padding: 2px;
+}
+.crs{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+}
+.btn{
+    border: none;
+    background-color: rgb(255, 252, 47);
+    padding: 5px;
+    border-radius: 5px;
+}

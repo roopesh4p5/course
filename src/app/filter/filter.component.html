@@ -1,0 +1,9 @@
+<div class="filter">
+    <span>Filter:</span>
+    <input type="radio" name="filter" value="all" [(ngModel)]="selected" (change)="changebtn()"/>
+    <span>{{'All Cources ('+all+')'}}</span>
+    <input type="radio" name="filter" value="paid"  [(ngModel)]="selected" (change)="changebtn()"/>
+    <span>{{'Paid Cources ('+paid+')'}}</span> 
+     <input type="radio" name="filter" value="free" [(ngModel)]="selected" (change)="changebtn()"/>
+    <span>{{'Free Cources ('+free+')'}}</span>
+</div>

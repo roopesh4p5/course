@@ -1,0 +1,31 @@
+
+<div class="hero">
+  <div class="cont">
+    <h1>online cources</h1>
+    <app-search></app-search>
+    <app-filter (filtr)="filterp($event)" [all]="totalcources()" [free]="free()" [paid]="paid()"></app-filter>
+    <div class="crs">
+
+      <ng-container *ngFor="let course of courses">
+        <div *ngIf="rselected===course.type||rselected==='all'">
+          <div class="card">
+            <img width="200px" height="150px" src="{{ course.img }}" alt="" />
+            <h4>{{ course.courseName }}</h4>
+            <p>{{ course.duration }}</p>
+  
+            <div *ngIf="course.price !== 'free'; else other">
+              <p>{{ course.price | currency }}</p>
+            </div>
+            <ng-template #other>
+              <p>{{ course.price }}</p>
+            </ng-template>
+  
+            <button class="btn" *ngIf="course.type==='free'; else otherbtn"> Acess the cource</button>
+           <ng-template #otherbtn> <button class="btn"  >Buy Now</button></ng-template>
+          </div>
+        </div>
+      </ng-container>
+     
+    </div>
+  </div>
+</div>
