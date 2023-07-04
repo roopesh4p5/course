@@ -147,5 +147,24 @@ export class CourceComponent {
     // console.log(this.courses[0].type);
   }
  
+  seachedfor:string="";
+  psearch=(message:any)=>{
+    this.seachedfor=message;
+    console.log(this.seachedfor)
+  }
+
+  
+
+  courseselected:any="";
+  
+  handle(cource: any){
+    this.courseselected=cource;
+    this.hello()
+  }
+
+  hello(){
+  // console.log(this.courseselected);
+  
+}
 
 }

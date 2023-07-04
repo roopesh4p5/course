@@ -2,12 +2,12 @@
 <div class="hero">
   <div class="cont">
     <h1>online cources</h1>
-    <app-search></app-search>
-    <app-filter (filtr)="filterp($event)" [all]="totalcources()" [free]="free()" [paid]="paid()"></app-filter>
+    <app-search (csearch)="psearch($event)"></app-search>
+    <app-filter  (filtr)="filterp($event)" [all]="totalcources()" [free]="free()" [paid]="paid()"></app-filter>
     <div class="crs">
 
       <ng-container *ngFor="let course of courses">
-        <div *ngIf="rselected===course.type||rselected==='all'">
+        <div *ngIf="(rselected===course.type||rselected==='all') && (seachedfor===''||course.courseName.toLowerCase().includes(seachedfor))">
           <div class="card">
             <img width="200px" height="150px" src="{{ course.img }}" alt="" />
             <h4>{{ course.courseName }}</h4>
@@ -19,9 +19,8 @@
             <ng-template #other>
               <p>{{ course.price }}</p>
             </ng-template>
-  
-            <button class="btn" *ngIf="course.type==='free'; else otherbtn"> Acess the cource</button>
-           <ng-template #otherbtn> <button class="btn"  >Buy Now</button></ng-template>
+            <button class="btn" (click)="handle(course)" *ngIf="course.type==='free'; else otherbtn"> Acess the cource</button>
+           <ng-template #otherbtn> <button (click)=" handle(course)" class="btn"  >Buy Now</button></ng-template>
           </div>
         </div>
       </ng-container>

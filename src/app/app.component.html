@@ -1,2 +1,3 @@
 
-<app-cource></app-cource>
+<app-cource #course></app-cource>
+<p *ngIf="course.courseselected?.courseName!==undefined">you have selected {{course.courseselected?.courseName}} </p>
